@@ -6,9 +6,10 @@
 enum E_ERR_TYPE
 {
 	UNKNOW,
+	NO_ERROR,
 	BAD_LABEL,
 	BAD_OPCODE,
-	BAD_PARAMETERS
+	BAD_PARAMETERS,
 };
 
 class FunError
