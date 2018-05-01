@@ -7,31 +7,22 @@
 
 namespace Fun
 {
+	namespace Types
+	{
+		typedef enum E_FUN_TYPES
+		{
+			BAD = 0b0000000000000000,
+			REG = 0b0000000000000001,
+			LBL = 0b0000000000000010,
+			NBR = 0b0000000000000100,
+			STR = 0b0000000000001000
+		} E_FUN_TYPES;
+	}
+
 	namespace OpCodes
 	{
-		std::vector < std::tuple<std::int16_t, std::string, std::int8_t, std::function<bool(std::vector<std::string>)>>> List = {
-			// REGISTER OPERATIONS
-			{0x1, "SETR", 2, [](std::vector <std::string> params) {return true; } },
-			{0x2, "MOVR", 2, [](std::vector <std::string> params) {return true; } },
-			// JUMPS
-			{0x3, "LBL", 1, [](std::vector <std::string> params) {return true; } },
-			{0x4, "JMP", 1, [](std::vector <std::string> params) {return true; } },
-			// CONDITIONAL JUMPS
-			{0x5, "IFSUP", 3, [](std::vector <std::string> params) {return true; } },
-			{0x6, "IFSUPQ", 3, [](std::vector <std::string> params) {return true; } },
-			{0x7, "IFINF", 3, [](std::vector <std::string> params) {return true; } },
-			{0x8, "IFINFQ", 3, [](std::vector <std::string> params) {return true; } },
-			{0x9, "IFEQ", 3, [](std::vector <std::string> params) {return true; } },
-			{0xA, "IFNEQ", 3, [](std::vector <std::string> params) {return true; } },
-			//{0xB, "IFNEG", 2, [](std::vector <std::string> params) {return true; } },
-			// ARITHMETIC OPERATIONS
-			{0xC, "ADD", 2, [](std::vector <std::string> params) {return true; } },
-			{0xD, "SUB", 2, [](std::vector <std::string> params) {return true; } },
-			{0xE, "MUL", 2, [](std::vector <std::string> params) {return true; } },
-			{0xF, "DIV", 2, [](std::vector <std::string> params) {return true; } },
-			{0x10, "MOD", 2, [](std::vector <std::string> params) {return true; } },
-			// DRAWING
-			{0x11, "DRW", 3, [](std::vector <std::string> params) {return true; } },
-		};
+		typedef std::vector < std::tuple<std::int16_t, std::string, std::int8_t, std::vector<std::uint32_t>>> OpCodeList;
+
+		extern OpCodeList List;
 	}
 }
