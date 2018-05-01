@@ -119,13 +119,17 @@
   <ItemGroup>
     <ClCompile Include="src\FunCompiler.cpp" />
     <ClCompile Include="src\FunError.cpp" />
+    <ClCompile Include="src\FunOpCodes.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\SyntaxChecker.cpp" />
+    <ClCompile Include="src\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\FunCompiler.h" />
     <ClInclude Include="include\FunError.h" />
+    <ClInclude Include="include\FunOpCodes.h" />
     <ClInclude Include="include\SyntaxChecker.h" />
+    <ClInclude Include="include\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
