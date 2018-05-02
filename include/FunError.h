@@ -9,7 +9,8 @@ enum E_ERR_TYPE
 	NO_ERROR,
 	BAD_LABEL,
 	BAD_OPCODE,
-	BAD_PARAMETERS,
+	BAD_PARAMETER,
+	BAD_PARAMETER_NBR
 };
 
 class FunError
@@ -17,10 +18,12 @@ class FunError
 public:
 	FunError();
 	FunError(E_ERR_TYPE type);
+	FunError(E_ERR_TYPE type, unsigned int paramNbr);
 	~FunError();
 
 	std::string What();
 
 private:
 	E_ERR_TYPE m_type;
+	unsigned int m_paramNbr;
 };
