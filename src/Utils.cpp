@@ -107,9 +107,9 @@ namespace Fun
 
 		Fun::Types::E_FUN_TYPES DeductType(std::string arg)
 		{
-			if (arg.length() == 1 && (arg[0] >= 'A' || arg[0] <= 'H'))
+			if (arg.length() == 1 && (arg[0] >= 'A' && arg[0] <= 'H'))
 				return Fun::Types::E_FUN_TYPES::REG;
-
+			
 			if (IsNumber(arg))
 				return Fun::Types::E_FUN_TYPES::NBR;
 
