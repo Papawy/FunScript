@@ -12,5 +12,5 @@ public:
 	~SyntaxChecker();
 
 	static FunError CheckLine(std::string line);
-	static std::vector<FunError> CheckFile(std::string file);
+	static std::vector<std::pair<unsigned int, FunError>> CheckFile(std::string file);
 };
